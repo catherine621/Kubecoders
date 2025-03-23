@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-failure-predictor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-failure
+  template:
+    metadata:
+      labels:
+        app: kube-failure
+    spec:
+      containers:
+      - name: kube-failure-container
+        image: cathyyyyy2544/kube-failure-model  # Your DockerHub image
+        ports:
+        - containerPort: 5000
