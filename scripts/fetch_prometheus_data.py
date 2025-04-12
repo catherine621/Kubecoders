@@ -27,8 +27,9 @@ logging.basicConfig(level=logging.DEBUG)
 def fetch_prometheus_data():
     queries = {
         "cpu": 'windows_cpu_time_total',
-        
-        
+        "memory": 'windows_memory_available_bytes',
+        "disk": 'windows_logical_disk_write_bytes_total',
+        "network": 'windows_net_bytes_received_total'
     }
 
     metrics = {}
